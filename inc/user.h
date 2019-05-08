@@ -17,6 +17,7 @@ class User{
 		int deposit(int a);
 		int withdraw(int a);
 		void userLogin();
+		template <typename ret> ret men();
 
 };
 #endif

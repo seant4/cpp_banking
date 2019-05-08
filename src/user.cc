@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+
 User::User(std::string n, std::string p, int b, int r){
 	name = n;
 	password = p;
@@ -35,10 +36,33 @@ void User::userLogin(){
 	std::cin >> p;	
 	if(p.compare(getPass()) == 0){
 		std::cout << "Login Successfull" << std::endl;
-		sleep(10);
+		men<int>();
 	}else{
 		std::cout << "Login denied" << std::endl;
-		sleep(10);
 	}
-}	
+}
+
+template <typename ret> ret User::men(){
+	system("clear");
+	std::cout << "Welcome, ";
+	std::cout << getName() << std::endl;
+	std::string in = " ";
+	std::cout << "Actions" << std::endl;
+	std::cin >> in;
+	if(in.compare("info")==0){
+		system("clear");
+		std::cout << "Name: ";
+		std::cout << getName() << std::endl;
+		std::cout << "Balance: ";
+		std::cout << getBalance() << std::endl;
+		std::cout << "Rate: ";
+		std::cout << getRate() << std::endl;
+		sleep(5);
+		men<int>();
+	}else{
+		std::cout << getBalance() << std::endl;
+		sleep(5);
+	}
+	return 0;
+}
 
