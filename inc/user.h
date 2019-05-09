@@ -18,6 +18,8 @@ class User{
 		int withdraw(int a);
 		void userLogin();
 		template <typename ret> ret men();
+		void deposit();
+		void withdraw();
 
 };
 #endif
