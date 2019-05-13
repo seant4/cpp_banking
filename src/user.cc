@@ -4,7 +4,7 @@
 #include <unistd.h>
 
 
-User::User(std::string n, std::string p, int b, int r){
+User::User(std::string n, std::string p, double b, int r){
 	name = n;
 	password = p;
 	balance = b;
@@ -21,7 +21,7 @@ std::string User::getName(){
 std::string User::getPass(){
 	return password;
 }
-int User::getBalance(){
+double User::getBalance(){
 	return balance;
 }
 int User::getRate(){

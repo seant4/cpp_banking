@@ -5,14 +5,14 @@ class User{
 	private:
 		std::string name;
 		std::string password;
-		int balance;
+		double balance;
 		int rate;
 	public:
-		User(std::string n, std::string p, int b, int r);
+		User(std::string n, std::string p, double b, int r);
 		std::string userData();
 		std::string getName();
 		std::string getPass();
-		int getBalance();
+		double getBalance();
 		int getRate();
 		int deposit(int a);
 		int withdraw(int a);

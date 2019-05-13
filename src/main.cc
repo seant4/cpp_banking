@@ -3,7 +3,6 @@
 #include <unistd.h>
 #include "../inc/user.h"
 #include <vector>
-//test dude if gitkraken is cool yo
 const std::string admin_pass = "password";
 
 void addUser(std::vector<User> &l){
@@ -14,7 +13,7 @@ void addUser(std::vector<User> &l){
 	std::string p;
 	std::cout << "Set password: " << std::endl;
 	std::cin >> p;
-	int b;
+	double b;
 	std::cout << "Balance: " << std::endl;
 	std::cin >> b;
 	int r;
@@ -53,17 +52,18 @@ void menu(std::vector<User> &l){
 	std::cin >> input;
 	switch((int)input){
 		case '1':
+			listUsers(l);
+			menu(l);
+		case '2':	
 			std::cout << "Admin Password: " << std::endl;
 			std::cout << "$> ";
 			std::cin >> in;
 			if(admin_pass.compare(in)==0){
-				listUsers(l);
+				addUser(l);
 				menu(l);
 			}else{
 				std::cout << "Incorrect" << std::endl;
 			}
-			menu(l);
-		case '2':
 			addUser(l);
 			menu(l);
 		case '3':
